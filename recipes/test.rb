@@ -1,3 +1,8 @@
+#<
+# This recipe is used to test that we actually can create a zpool or different raids
+# using fake disks.
+#>
+
 include_recipe 'optoro_zfs::default'
 
 bash 'create fake disks' do
