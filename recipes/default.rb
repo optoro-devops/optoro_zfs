@@ -1,3 +1,7 @@
+#<
+## Pulls in zfs_linux cookbook & set zfs-arc-max if appropriate
+#>
+
 # create limits before installing to avoid having to reload after
 template '/etc/modprobe.d/zfs-arc-max.conf' do
   owner 'root'
