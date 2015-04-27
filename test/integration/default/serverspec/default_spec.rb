@@ -15,3 +15,7 @@ describe zfs('raid10-with-log-mirror/test') do
   it { should exist }
   it { should have_property 'atime' => 'off', 'mountpoint' => '/test' }
 end
+
+describe package('mountall') do
+  it { should be_installed }
+end
