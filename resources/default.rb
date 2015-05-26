@@ -10,8 +10,8 @@ attribute :quota, kind_of: String, default: 'none'
 attribute :refquota, kind_of: String, default: 'none'
 attribute :reservation, kind_of: String, default: 'none'
 attribute :refreservation, kind_of: String, default: 'none'
-attribute :primarycache, kind_of: String, default: 'all', equal_to: ['all', 'none', 'metadata']
-attribute :secondarycache, kind_of: String, default: 'all', equal_to: ['all', 'none', 'metadata']
+attribute :primarycache, kind_of: String, default: 'all', equal_to: %w(all none metadata)
+attribute :secondarycache, kind_of: String, default: 'all', equal_to: %w(all none metadata)
 attribute :dedup, kind_of: String, equal_to: %w(on off), default: 'off'
 
 attribute :info, kind_of: Mixlib::ShellOut, default: nil

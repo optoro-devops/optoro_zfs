@@ -1,21 +1,19 @@
 include Chef::Mixin::ShellOut
 
-def load_current_resource
+def load_current_resource # rubocop:disable Metrics/MethodLength
   @zfs = Chef::Resource::Zfs.new(new_resource.name)
   @zfs.name(new_resource.name)
   case node['platform']
     # freebsd's zfs doesn't support the 'zone' functionality
   when 'freebsd'
     @managed_props = %w(
-      mountpoint recordsize atime compression quota
-      refquota reservation refreservation dedup primarycache
-      secondarycache
+      mountpoint recordsize atime compression quota refquota
+      reservation refreservation dedup primarycache secondarycache
     )
   else
     @managed_props = %w(
-      mountpoint zoned recordsize atime compression quota
-      refquota reservation refreservation dedup primarycache
-      secondarycache
+      mountpoint zoned recordsize atime compression quota refquota
+      reservation refreservation dedup primarycache secondarycache
     )
   end
 
