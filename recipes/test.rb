@@ -28,5 +28,6 @@ end
 
 optoro_zfs 'raid10-with-log-mirror/test' do
   atime 'off'
+  primarycache 'metadata'
   mountpoint '/test'
 end
