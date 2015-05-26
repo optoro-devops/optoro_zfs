@@ -26,7 +26,7 @@ zpool 'raid10-with-log-mirror' do
   autoexpand true
 end
 
-zfs 'raid10-with-log-mirror/test' do
+optoro_zfs 'raid10-with-log-mirror/test' do
   atime 'off'
   mountpoint '/test'
 end
