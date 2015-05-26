@@ -11,4 +11,5 @@ template '/etc/modprobe.d/zfs-arc-max.conf' do
 end
 
 include_recipe 'zfs_linux'
+include_recipe 'zfs_linux::auto-scrub'
 package 'mountall'
