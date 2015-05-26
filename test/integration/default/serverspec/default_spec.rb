@@ -13,7 +13,7 @@ end
 
 describe zfs('raid10-with-log-mirror/test') do
   it { should exist }
-  it { should have_property 'atime' => 'off', 'mountpoint' => '/test' }
+  it { should have_property 'atime' => 'off', 'mountpoint' => '/test', 'primarycache' => 'metadata' }
 end
 
 describe package('mountall') do
