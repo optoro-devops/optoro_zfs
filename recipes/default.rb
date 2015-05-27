@@ -12,4 +12,5 @@ end
 
 include_recipe 'zfs_linux'
 include_recipe 'zfs_linux::auto-scrub'
+include_recipe 'zfs_linux::auto-snapshot' if node['optoro_zfs']['auto_snapshot']
 package 'mountall'

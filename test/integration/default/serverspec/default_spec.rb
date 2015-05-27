@@ -19,3 +19,11 @@ end
 describe package('mountall') do
   it { should be_installed }
 end
+
+describe file('/etc/cron.daily/zfs-auto-snapshot') do
+  its(:content) { should match(/exec zfs-auto-snapshot/) }
+end
+
+describe file('/etc/cron.monthly/zfs-auto-snapshot') do
+  its(:content) { should match(/exec zfs-auto-snapshot/) }
+end
